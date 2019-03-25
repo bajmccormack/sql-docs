@@ -109,11 +109,11 @@ manager: craigg
   
 4.  **Backup the database:** Specify the encryption algorithm and the certificate to use. Copy and paste the following example into the query window and click **Execute**.  
   
-    ```  
+    ```      
     BACKUP DATABASE [MyTestDB]  
-    TO URL = N'C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\Backup\MyTestDB.bak'  
+    TO URL = 'https://mystorageaccount.blob.core.windows.net/Backup/MyTestDB.bak'
     WITH  
-      CREDENTIAL 'mycredential' - this is the name of the credential created in the first step.  
+      CREDENTIAL = 'mycredential' -- this is the name of the credential created in the first step.  
       ,COMPRESSION  
       ,ENCRYPTION   
        (  
